@@ -62,7 +62,9 @@ public class InteractivePrediction {
 		ModelZooArchive model = ij.get(ModelZooService.class).io().open(modelPath);
 		ij.ui().show(model);
 
-		Img img = (Img) ij.io().open(imgPath);
+		// TODO scifio DatasetIOPlugin fixed in future versions (fixed in 0.41.2)
+		// Img img = (Img) ij.io().open(imgPath);
+		Img img = (Img) ij.scifio().datasetIO().open(imgPath);
 
 		PredictionOutput outputs = ij.get(ModelZooService.class).predict(model, img, "XYB");
 		outputs.asMap().forEach((name, output) -> {

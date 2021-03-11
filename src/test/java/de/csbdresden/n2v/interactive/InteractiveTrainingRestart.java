@@ -69,6 +69,8 @@ public class InteractiveTrainingRestart {
 			ij.ui().show("stack", stack);
 
 			N2VTraining n2v = new N2VTraining(ij.context());
+
+			// TODO change to a URL
 			n2v.init("/home/random/Development/imagej/project/CSBDeep/n2v-trained-model3853066279801947474.zip",
 					new N2VConfig()
 							.setTrainDimensions(2)

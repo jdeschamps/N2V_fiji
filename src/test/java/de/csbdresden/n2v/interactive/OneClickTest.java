@@ -39,6 +39,10 @@ import java.util.concurrent.ExecutionException;
 
 public class OneClickTest {
 
+	public static void main(String... args) throws ExecutionException, InterruptedException {
+		new OneClickTest().testTrainingAndPrediction();
+	}
+
 	public void testTrainingAndPrediction() throws ExecutionException, InterruptedException {
 
 		ImageJ ij = new ImageJ();
@@ -57,7 +61,7 @@ public class OneClickTest {
 					"numEpochs", 20,
 					"mode3D", false,
 					"batchSize", 128,
-					"batchDimLength", 128,
+					//"batchDimLength", 128,
 					"patchShape", 64).get();
 		}
 	}
